@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta />
+    <title>Dog C.E.O.</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Arial", sans-serif;
+      }
+
+      /* Dark background with subtle contrast */
+      body {
+        background-color: #1e1e1e; /* Dark grey */
+        color: #f0e7ff; /* Light pastel purple */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        min-height: 100vh;
+        padding: 20px;
+      }
+      /* Title Styling */
+      h1 {
+        text-align: center;
+        justify-content: center;
+        font-size: 2.2rem;
+        color: #b8b8b8; /* Pastel purple */
+        margin-bottom: 20px;
+      }
+      .main-title {
+        background-color: #3d3d3d;
+        max-width: 90%;
+        width: 90%;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      }
+      .seperator {
+        margin: 20px;
+      }
+      .button-container {
+        display: flex;
+        justify-content: space-between; /* Evenly distributes space between buttons */
+        gap: 10px; /* Adds spacing between columns */
+      }
+      .button-container > * {
+        flex: 1; /* Makes each column take equal space */
+        text-align: center; /* Centers text inside the column */
+        align-items: center;
+        padding: 10px;
+        background-color: #4b4b4b; /* Pastel purple */
+        color: white;
+        border-radius: 5px;
+      }
+      .button-column {
+        justify-content: center;
+        align-self: center;
+        align-content: center;
+      }
+      .button-column:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+      }
+      .main-button {
+        background-color: #6d6d6d7e; /* Makes the background fully transparent */
+        border: none; /* Removes any default border */
+        color: #ffffff; /* Set the text color (pastel purple) */
+        font-size: 16px; /* Adjust font size */
+        cursor: pointer; /* Makes it clear it's clickable */
+        padding: 10px 20px; /* Adds some spacing around the text */
+      }
+      .fetch-button {
+        background-color: #6d6d6d7e; /* Makes the background fully transparent */
+        justify-content: center;
+        align-self: center;
+        border: none; /* Removes any default border */
+        color: #ffffff; /* Set the text color (pastel purple) */
+        font-size: 16px; /* Adjust font size */
+        cursor: pointer; /* Makes it clear it's clickable */
+        padding: 20px 20px; /* Adds some spacing around the text */
+      }
+      .dog-image-figure {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #e7d6a7; /* Pastel purple */
+        padding: 10px;
+        border-radius: 10px;
+        overflow: hidden;
+      }
+      .dog-image {
+        width: 500px; /* Set a fixed width */
+        height: 500px; /* Match height to width for a square */
+        object-fit: cover; /* Ensures the image fills the square while maintaining aspect ratio */
+        border-radius: 10px; /* Optional: Adds rounded corners */
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2); /* Optional: Adds a soft shadow */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-title">
+      <h1>Dog CEO</h1>
+    </div>
+    <div class="seperator"></div>
+    <div class="button-container">
+      <div class="button-column">
+        <p>Choose a dog breed:</p>
+        <div class="seperator"></div>
+        <select class="dog-selector main-button" id="dog-select">
+          <option value="affenpinscher">affenpinscher</option>
+          <option value="african">african</option>
+          <option value="airedale" selected>airedale</option>
+          <option value="akita">akita</option>
+          <option value="appenzeller">appenzeller</option>
+          <option value="australian-kelpie">kelpie australian</option>
+          <option value="australian-shepherd">shepherd australian</option>
+          <option value="bakharwal-indian">indian bakharwal</option>
+          <option value="basenji">basenji</option>
+          <option value="beagle">beagle</option>
+          <option value="bluetick">bluetick</option>
+          <option value="borzoi">borzoi</option>
+          <option value="bouvier">bouvier</option>
+          <option value="boxer">boxer</option>
+          <option value="brabancon">brabancon</option>
+          <option value="briard">briard</option>
+          <option value="buhund-norwegian">norwegian buhund</option>
+          <option value="bulldog-boston">boston bulldog</option>
+          <option value="bulldog-english">english bulldog</option>
+          <option value="bulldog-french">french bulldog</option>
+          <option value="bullterrier-staffordshire">
+            staffordshire bullterrier
+          </option>
+          <option value="cattledog-australian">australian cattledog</option>
+          <option value="cavapoo">cavapoo</option>
+          <option value="chihuahua">chihuahua</option>
+          <option value="chippiparai-indian">indian chippiparai</option>
+          <option value="chow">chow</option>
+          <option value="clumber">clumber</option>
+          <option value="cockapoo">cockapoo</option>
+          <option value="collie-border">border collie</option>
+          <option value="coonhound">coonhound</option>
+          <option value="corgi-cardigan">cardigan corgi</option>
+          <option value="cotondetulear">cotondetulear</option>
+          <option value="dachshund">dachshund</option>
+          <option value="dalmatian">dalmatian</option>
+          <option value="dane-great">great dane</option>
+          <option value="danish-swedish">swedish danish</option>
+          <option value="deerhound-scottish">scottish deerhound</option>
+          <option value="dhole">dhole</option>
+          <option value="dingo">dingo</option>
+          <option value="doberman">doberman</option>
+          <option value="elkhound-norwegian">norwegian elkhound</option>
+          <option value="entlebucher">entlebucher</option>
+          <option value="eskimo">eskimo</option>
+          <option value="finnish-lapphund">lapphund finnish</option>
+          <option value="frise-bichon">bichon frise</option>
+          <option value="gaddi-indian">indian gaddi</option>
+          <option value="germanshepherd">germanshepherd</option>
+          <option value="greyhound-indian">indian greyhound</option>
+          <option value="greyhound-italian">italian greyhound</option>
+          <option value="groenendael">groenendael</option>
+          <option value="havanese">havanese</option>
+          <option value="hound-afghan">afghan hound</option>
+          <option value="hound-basset">basset hound</option>
+          <option value="hound-blood">blood hound</option>
+          <option value="hound-english">english hound</option>
+          <option value="hound-ibizan">ibizan hound</option>
+          <option value="hound-plott">plott hound</option>
+          <option value="hound-walker">walker hound</option>
+          <option value="husky">husky</option>
+          <option value="keeshond">keeshond</option>
+          <option value="kelpie">kelpie</option>
+          <option value="kombai">kombai</option>
+          <option value="komondor">komondor</option>
+          <option value="kuvasz">kuvasz</option>
+          <option value="labradoodle">labradoodle</option>
+          <option value="labrador">labrador</option>
+          <option value="leonberg">leonberg</option>
+          <option value="lhasa">lhasa</option>
+          <option value="malamute">malamute</option>
+          <option value="malinois">malinois</option>
+          <option value="maltese">maltese</option>
+          <option value="mastiff-bull">bull mastiff</option>
+          <option value="mastiff-english">english mastiff</option>
+          <option value="mastiff-indian">indian mastiff</option>
+          <option value="mastiff-tibetan">tibetan mastiff</option>
+          <option value="mexicanhairless">mexicanhairless</option>
+          <option value="mix">mix</option>
+          <option value="mountain-bernese">bernese mountain</option>
+          <option value="mountain-swiss">swiss mountain</option>
+          <option value="mudhol-indian">indian mudhol</option>
+          <option value="newfoundland">newfoundland</option>
+          <option value="otterhound">otterhound</option>
+          <option value="ovcharka-caucasian">caucasian ovcharka</option>
+          <option value="papillon">papillon</option>
+          <option value="pariah-indian">indian pariah</option>
+          <option value="pekinese">pekinese</option>
+          <option value="pembroke">pembroke</option>
+          <option value="pinscher-miniature">miniature pinscher</option>
+          <option value="pitbull">pitbull</option>
+          <option value="pointer-german">german pointer</option>
+          <option value="pointer-germanlonghair">germanlonghair pointer</option>
+          <option value="pomeranian">pomeranian</option>
+          <option value="poodle-medium">medium poodle</option>
+          <option value="poodle-miniature">miniature poodle</option>
+          <option value="poodle-standard">standard poodle</option>
+          <option value="poodle-toy">toy poodle</option>
+          <option value="pug">pug</option>
+          <option value="puggle">puggle</option>
+          <option value="pyrenees">pyrenees</option>
+          <option value="rajapalayam-indian">indian rajapalayam</option>
+          <option value="redbone">redbone</option>
+          <option value="retriever-chesapeake">chesapeake retriever</option>
+          <option value="retriever-curly">curly retriever</option>
+          <option value="retriever-flatcoated">flatcoated retriever</option>
+          <option value="retriever-golden">golden retriever</option>
+          <option value="ridgeback-rhodesian">rhodesian ridgeback</option>
+          <option value="rottweiler">rottweiler</option>
+          <option value="saluki">saluki</option>
+          <option value="samoyed">samoyed</option>
+          <option value="schipperke">schipperke</option>
+          <option value="schnauzer-giant">giant schnauzer</option>
+          <option value="schnauzer-miniature">miniature schnauzer</option>
+          <option value="segugio-italian">italian segugio</option>
+          <option value="setter-english">english setter</option>
+          <option value="setter-gordon">gordon setter</option>
+          <option value="setter-irish">irish setter</option>
+          <option value="sharpei">sharpei</option>
+          <option value="sheepdog-english">english sheepdog</option>
+          <option value="sheepdog-indian">indian sheepdog</option>
+          <option value="sheepdog-shetland">shetland sheepdog</option>
+          <option value="shiba">shiba</option>
+          <option value="shihtzu">shihtzu</option>
+          <option value="spaniel-blenheim">blenheim spaniel</option>
+          <option value="spaniel-brittany">brittany spaniel</option>
+          <option value="spaniel-cocker">cocker spaniel</option>
+          <option value="spaniel-irish">irish spaniel</option>
+          <option value="spaniel-japanese">japanese spaniel</option>
+          <option value="spaniel-sussex">sussex spaniel</option>
+          <option value="spaniel-welsh">welsh spaniel</option>
+          <option value="spitz-indian">indian spitz</option>
+          <option value="spitz-japanese">japanese spitz</option>
+          <option value="springer-english">english springer</option>
+          <option value="stbernard">stbernard</option>
+          <option value="terrier-american">american terrier</option>
+          <option value="terrier-australian">australian terrier</option>
+          <option value="terrier-bedlington">bedlington terrier</option>
+          <option value="terrier-border">border terrier</option>
+          <option value="terrier-cairn">cairn terrier</option>
+          <option value="terrier-dandie">dandie terrier</option>
+          <option value="terrier-fox">fox terrier</option>
+          <option value="terrier-irish">irish terrier</option>
+          <option value="terrier-kerryblue">kerryblue terrier</option>
+          <option value="terrier-lakeland">lakeland terrier</option>
+          <option value="terrier-norfolk">norfolk terrier</option>
+          <option value="terrier-norwich">norwich terrier</option>
+          <option value="terrier-patterdale">patterdale terrier</option>
+          <option value="terrier-russell">russell terrier</option>
+          <option value="terrier-scottish">scottish terrier</option>
+          <option value="terrier-sealyham">sealyham terrier</option>
+          <option value="terrier-silky">silky terrier</option>
+          <option value="terrier-tibetan">tibetan terrier</option>
+          <option value="terrier-toy">toy terrier</option>
+          <option value="terrier-welsh">welsh terrier</option>
+          <option value="terrier-westhighland">westhighland terrier</option>
+          <option value="terrier-wheaten">wheaten terrier</option>
+          <option value="terrier-yorkshire">yorkshire terrier</option>
+          <option value="tervuren">tervuren</option>
+          <option value="vizsla">vizsla</option>
+          <option value="waterdog-spanish">spanish waterdog</option>
+          <option value="weimaraner">weimaraner</option>
+          <option value="whippet">whippet</option>
+          <option value="wolfhound-irish">irish wolfhound</option>
+        </select>
+      </div>
+
+      <div class="button-column">
+        <button class="fetch-button" type="button" id="fetch-button">
+          Fetch!
+        </button>
+      </div>
+    </div>
+    <div class="seperator"></div>
+    <div class="seperator"></div>
+    <figure class="dog-image-figure">
+      <p id="image-output"><img class="dog-image" src="https://images.dog.ceo/breeds/airedale/n02096051_738.jpg" alt="" /></p>
+    </figure>
+    <script>
+      const { ipcRenderer } = require("electron");
+      document
+        .getElementById("fetch-button")
+        .addEventListener("click", function () {
+          const selectElement = document.getElementById("dog-select");
+
+          const selectedValue = selectElement.value;
+          selectElement.value = selectedValue;
+          ipcRenderer.send("selected-value", selectedValue);
+        });
+    </script>
+  </body>
+</html>
